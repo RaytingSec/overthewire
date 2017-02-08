@@ -1,0 +1,27 @@
+leviathan1@leviathan.labs.overthewire.org
+rioGegei8m
+
+ll
+find check binary
+try running, notice it asks for a password. With no other given files, assume password is in binary.
+scp to computer
+run strings, cat, and vim
+#1
+    open with vim
+#2
+    run strings with -n 2
+#3
+    cat, although 's' in sex was partially blocked
+string fragments, "sex" "secrf" "et" "love"
+Try different ones and combinations
+find "sex" is the correct password
+Correct pass gives you a shell, on my own computer, doesn't seem to do anything
+ssh back into leviathan, use correct password to get shell
+whoami returns leviathan2 - success
+cd .. to understand where you are, find dir for all other levels
+cd .. again for root dir of machine
+See "README.txt", open and find "Passwords for each level are stored in /etc/mygame_pass/."
+cd to /etc/leviathan/ and find files for various leviathan levels, all owned by respective users
+cat leviathan2 to get password
+
+in short - run strings on check, and use the shell to navigate to password
